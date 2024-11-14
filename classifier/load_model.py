@@ -1,9 +1,13 @@
+import os
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import tensorflow as tf
 # classifier/load_model.py
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
 import numpy as np
 
+print(f"TensorFlow version: {tf.__version__}")
 # Load the pre-trained model
 model = MobileNetV2(weights="imagenet")
 
